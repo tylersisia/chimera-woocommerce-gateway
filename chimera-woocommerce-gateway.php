@@ -151,7 +151,7 @@ function chimera_init() {
 
     add_action('wp_enqueue_scripts', 'chimera_enqueue_scripts');
     function chimera_enqueue_scripts() {
-        if(Chimera_Gateway::use_turtlecoin_price())
+        if(Chimera_Gateway::use_chimera_price())
             wp_dequeue_script('wc-cart-fragments');
         if(Chimera_Gateway::use_qr_code())
             wp_enqueue_script('chimera-qr-code', CHIMERA_GATEWAY_PLUGIN_URL.'assets/js/qrcode.min.js');
