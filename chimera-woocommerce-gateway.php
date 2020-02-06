@@ -111,7 +111,7 @@ function chimera_init() {
         return $currency_symbol;
     }
 
-    if(Chimera_Gateway::use_himera_price()) {
+    if(Chimera_Gateway::use_chimera_price()) {
 
         // This filter will replace all prices with amount in Chimera (live rates)
         add_filter('wc_price', 'chimera_live_price_format', 10, 3);
