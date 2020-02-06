@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 define('CHIMERA_GATEWAY_EXPLORER_URL', 'http://blockapi.chimeraproject.io:8080/');
 define('CHIMERA_GATEWAY_ATOMIC_UNITS', 2);
 define('CHIMERA_GATEWAY_ATOMIC_UNIT_THRESHOLD', 100); // Amount under in atomic units payment is valid
-define('CHIMERA_GATEWAY_DIFFICULTY_TARGET', 30);
+define('CHIMERA_GATEWAY_DIFFICULTY_TARGET', 60);
 
 // Do not edit these constants
 define('CHIMERA_GATEWAY_PLUGIN_DIR', plugin_dir_path(__FILE__));
@@ -70,8 +70,8 @@ function chimera_init() {
         }
     }
 
-    add_action('chimera_update_event', 'dergold_update_event');
-    function dergold_update_event() {
+    add_action('chimera_update_event', 'chimera_update_event');
+    function chimera_update_event() {
         Chimera_Gateway::do_update_event();
     }
 
@@ -177,7 +177,7 @@ function chimera_init() {
         else
             $rate_formatted = sprintf('%.8f', $rate / 1e8);
 
-        return "<span class=\"chimera-price\">1 DEGO = $rate_formatted $currency</span>";
+        return "<span class=\"chimera-price\">1 CMRA = $rate_formatted $currency</span>";
     }
     add_shortcode('chimera-price', 'chimera_price_func');
 
