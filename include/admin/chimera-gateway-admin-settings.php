@@ -49,7 +49,7 @@ return array(
         'desc_tip' => __('Chimera Wallet Address (CMRA)', 'chimera_gateway')
     ),
     'daemon_host' => array(
-        'title' => __('Derogold-Service Host/IP', 'chimera_gateway'),
+        'title' => __('Chimera-Service Host/IP', 'chimera_gateway'),
         'type' => 'text',
         'desc_tip' => __('This is the chimera-service Host/IP to authorize the payment with', 'chimera_gateway'),
         'default' => '127.0.0.1',
