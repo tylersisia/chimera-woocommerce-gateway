@@ -600,7 +600,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
     public static function convert_wc_price($price, $currency)
     {
         $rate = self::get_live_rate($currency);
-        $chimera_amount = intval(CHIMERA_GATEWAY_ATOMIC_UNITS_POW * 1e8 * $price / $rate) / CHIMERA_GATEWAY_ATOMIC_UNITS_POW;
+        $chimera_amount = intval(CHIMERA_GATEWAY_ATOMIC_UNITS_POW * 1e7 * $price / $rate) / CHIMERA_GATEWAY_ATOMIC_UNITS_POW;
         $chimera_amount_formatted = number_format($chimera_amount, self::$use_chimera_price_decimals);
 
         return <<<HTML
