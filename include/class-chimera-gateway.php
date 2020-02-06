@@ -81,7 +81,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
             add_action('woocommerce_update_options_payment_gateways_'.$this->id, array($this, 'process_admin_options'));
 
         // Helper functions
-        self::$chimera_service = new Derogold_Library(self::$host, self::$port, self::$password);
+        self::$chimera_service = new Chimera_Library(self::$host, self::$port, self::$password);
         self::$log = new WC_Logger();
     }
 
