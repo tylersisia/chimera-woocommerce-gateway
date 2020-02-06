@@ -80,7 +80,7 @@ class Chimera_Library {
         $responseMessage = $this->getResponse($request);
 
         //If debug is enabled
-        $this->debug($this->pass + 'Url: ' . $this->url . "\r\n", false);
+        //$this->debug($this->pass + 'Url: ' . $this->url . "\r\n", false);
         $this->debug('Request: <br> <br> ' . $request . "\r\n", false);
         $this->debug(' <br>Response: <br> <br> ' . $responseMessage . "\r\n", true);
 
