@@ -146,7 +146,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
         } else {
             return array(
                 'height' => $height,
-                'balance' => ($wallet_amount['availableBalance']).' CMRA',
+                'balance' => ($wallet_amount['availableBalance']/100).' CMRA',
                 'unlocked_balance' => ($wallet_amount['availableBalance']).' CMRA'
             );
         }
