@@ -209,7 +209,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
         global $wpdb;
 
         // Get Live Price
-        $CMRA_link = 'https://coingecko.com/api/v3/coins/XTNC/tickers';
+        $CMRA_link = 'https://tradeogre.com/api/v1/ticker/ltc-trtl';
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
@@ -219,7 +219,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
         curl_close($curl);
         $price_trtl = json_decode($resp, true);
 
-        $api_link = 'https://api.coingecko.com/api/v3/simple/price?ids=XTNC&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false';
+        $api_link = 'https://min-api.cryptocompare.com/data/price?fsym=TRTL&tsyms=USD&extraParams=trtl_woocommerce';
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
