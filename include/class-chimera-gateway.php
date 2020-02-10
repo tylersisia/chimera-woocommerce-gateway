@@ -41,7 +41,7 @@ class Chimera_Gateway extends WC_Payment_Gateway
 
     function __construct($add_action=true)
     {
-        $this->id = "chimera_gateway";
+        $this->id = self::$_id;
         $this->method_title = __(self::$_method_title, 'chimera_gateway');
         $this->method_description = __(self::$_method_description, 'chimera_gateway');
         $this->has_fields = false;
