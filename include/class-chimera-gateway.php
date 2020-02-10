@@ -229,12 +229,12 @@ class Chimera_Gateway extends WC_Payment_Gateway
         curl_close($curl);
         $price = json_decode($resp, true);
 
-        if($price_dego['success'] === true && isset($price_dego['bid'])) {
+        if($price_cmra['success'] === true && isset($price_cmra['bid'])) {
             if(isset($price['USD'])) {
                 $table_name = $wpdb->prefix.'chimera_gateway_live_rates';
 
                 // shift decimal eight places for precise int storage
-                $rate_usd = intval($price['USD'] * $price_dego['bid'] * 1e8);
+                $rate_usd = intval($price['USD'] * $price_cmra['bid'] * 1e8);
                 $query = $wpdb->prepare("INSERT INTO $table_name (currency, rate, updated) VALUES (%s, %d, NOW()) ON DUPLICATE KEY UPDATE rate=%d, updated=NOW()", array('USD', $rate_usd, $rate_usd));
                 $wpdb->query($query);
             }
